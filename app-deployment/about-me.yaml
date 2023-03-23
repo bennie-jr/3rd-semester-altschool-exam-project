@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: about-me-app
+  labels:
+    name: about-me-app
+  namespace: about-me-app-namespace
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: about-me-app
+  template:
+    metadata:
+      labels:
+        name: about-me-app
+    spec:
+      containers:
+      - name: about-me-app
+        image: bennielj/about-me-app:v0.1
+        ports:
+        - containerPort: 80 

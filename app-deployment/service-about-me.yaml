@@ -1,0 +1,18 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: about-me-app
+  annotations:
+        prometheus.io/scrape: 'true'
+  labels:
+    name: about-me-app
+  namespace: about-me-app-namespace
+spec:
+  type: LoadBalancer
+  ports:
+  - name: metrics
+    port: 80
+    targetPort: 80
+  selector:
+    name: about-me-app
