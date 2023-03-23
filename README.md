@@ -13,18 +13,19 @@ The aim of this project is to demonstrate the deployment of applications to AWS 
 
 The Terraform files used for the deployment are organized in different directories to optimize deployment using a CI/CD pipeline. The `backend` folder contains the configuration for the S3 bucket and DynamoDB, which will be used as backend and lock for storing the state of the Terraform deployment. The `infrastructure` folder contains the Terraform files for deploying the required infrastructure to AWS, including network components like VPC, IGW, NAT-GW, Elastic IPs, Route tables and routes, subnets, and security groups. The `deployment` folder contains the scripts used for deploying the two applications to the AWS infrastructure, and the `monitoring` folder contains the scripts used to deploy Prometheus and Grafana to the cluster.
 
-## Requirements
+## prerequisites for project
 
 To run this project, you will need:
 
 - Terraform
 - AWS CLI and an AWS account
-- CircleCI
-- Prometheus and Grafana
-- Docker and Dockerhub
+- iam user with administrator access
 - Kubernetes
+- Domain (namecheap)
+- Docker and Dockerhub Account
+- CircleCI Account
 - Git and Github
-- A domain (namecheap)
+- Prometheus and Grafana
 
 ## Conclusion
 
